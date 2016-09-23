@@ -1,9 +1,9 @@
 var express = require("express");
-console.log("trying to load");
+
 var router = express.Router();
 
 function twilioMiddleware(req, res, next) {
-    console.log("in the wilio middlewares");
+
     next();
 };
 
