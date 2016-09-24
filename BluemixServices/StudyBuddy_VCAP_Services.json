@@ -1,0 +1,99 @@
+{
+  "cloudantNoSQLDB" : [ {
+    "name" : "StudyBuddy-cloudantNoSQLDB",
+    "label" : "cloudantNoSQLDB",
+    "plan" : "Shared",
+    "credentials" : {
+      "username" : "19e176ca-f70a-4450-b4af-c9c49a07f9bc-bluemix",
+      "password" : "c5bcef290b87b7c31ef4187e42bbdfe7ccca3f31ac4159dd5c9c811473298153",
+      "host" : "19e176ca-f70a-4450-b4af-c9c49a07f9bc-bluemix.cloudant.com",
+      "port" : 443,
+      "url" : "https://19e176ca-f70a-4450-b4af-c9c49a07f9bc-bluemix:c5bcef290b87b7c31ef4187e42bbdfe7ccca3f31ac4159dd5c9c811473298153@19e176ca-f70a-4450-b4af-c9c49a07f9bc-bluemix.cloudant.com"
+    }
+  } ],
+  "imfpush" : [ {
+    "name" : "StudyBuddy-imfpush",
+    "label" : "imfpush",
+    "plan" : "Basic",
+    "credentials" : {
+      "url" : "http://imfpush.ng.bluemix.net/imfpush/v1/apps/596d7459-0e89-4f30-94a5-3411f9fe5911",
+      "admin_url" : "//mobile.ng.bluemix.net/imfpushdashboard/?appGuid=596d7459-0e89-4f30-94a5-3411f9fe5911",
+      "appSecret" : "5467d735-9087-4e5a-b14d-be4620c8999a"
+    }
+  } ],
+  "AdvancedMobileAccess" : [ {
+    "name" : "StudyBuddy-AdvancedMobileAccess",
+    "label" : "AdvancedMobileAccess",
+    "plan" : "Gold",
+    "credentials" : {
+      "serverUrl" : "https://imf-authserver.ng.bluemix.net/imf-authserver",
+      "clientId" : "596d7459-0e89-4f30-94a5-3411f9fe5911",
+      "secret" : "BhFin7D0RWy+MSOIhxYiig",
+      "tenantId" : "596d7459-0e89-4f30-94a5-3411f9fe5911",
+      "admin_url" : "https://mobile.ng.bluemix.net/imfmobileplatformdashboard/?appGuid=596d7459-0e89-4f30-94a5-3411f9fe5911"
+    }
+  } ],
+  "alchemy_api" : [ {
+    "name" : "AlchemyAPI-StudyBuddy",
+    "label" : "alchemy_api",
+    "plan" : "standard",
+    "credentials" : {
+      "url" : "https://gateway-a.watsonplatform.net/calls",
+      "apikey" : "bd600db15a601b7f94382f7260d7a7b589cbd4df",
+      "note" : "It may take up to 5 minutes for this key to become active"
+    }
+  } ],
+  "natural_language_classifier" : [ {
+    "name" : "Natural Language Classifier-sz",
+    "label" : "natural_language_classifier",
+    "plan" : "standard",
+    "credentials" : {
+      "url" : "https://gateway.watsonplatform.net/natural-language-classifier/api",
+      "username" : "89ff4244-24fb-449a-aa65-fafe192e6488",
+      "password" : "2D80SlMLAQDG"
+    }
+  } ],
+  "retrieve_and_rank" : [ {
+    "name" : "Retrieve and Rank-wu",
+    "label" : "retrieve_and_rank",
+    "plan" : "standard",
+    "credentials" : {
+      "url" : "https://gateway.watsonplatform.net/retrieve-and-rank/api",
+      "msg" : "Unrecognized field \"bind_resource\" (class com.ibm.watson.search.cloud.resource.models.ServiceBrokerBindRequest), not marked as ignorable (4 known properties: \"plan_id\", \"service_id\", \"organization_guid\", \"app_guid\"])\n at [Source: org.apache.catalina.connector.CoyoteInputStream@876603f; line: 1, column: 170] (through reference chain: com.ibm.watson.search.cloud.resource.models.ServiceBrokerBindRequest[\"bind_resource\"])",
+      "code" : 500,
+      "username" : "969e586f-182a-4d97-b048-c7f49f0a04df",
+      "password" : "nggceuaawh4D"
+    }
+  } ],
+  "dialog" : [ {
+    "name" : "Dialog-c8",
+    "label" : "dialog",
+    "plan" : "standard",
+    "credentials" : {
+      "url" : "https://gateway.watsonplatform.net/dialog/api",
+      "username" : "58a3f2dd-eee3-4f7a-b71e-f994c5cf431a",
+      "password" : "0EaxbH3dZGif"
+    }
+  } ],
+  "document_conversion" : [ {
+    "name" : "Document Conversion-2s",
+    "label" : "document_conversion",
+    "plan" : "experimental",
+    "credentials" : {
+      "url" : "https://gateway.watsonplatform.net/document-conversion-experimental/api",
+      "code" : 400,
+      "error" : "Incorrect JSON field(s) in the request body ending at line: 1, column: 170 - Bad JSON field \"bind_resource\"",
+      "username" : "b282e83b-d778-4db7-b7e5-4c9240f6e679",
+      "password" : "kG3ixVHjWfEJ"
+    }
+  } ],
+  "twilio" : [ {
+    "name" : "twilio custom",
+    "label" : "twilioJoey",
+    "plan" : "paidFor",
+    "credentials" : {
+      "username" : "SK845d119ce7cd5a3724372ae2228c5fe1",
+      "password" : "AILL5Rx5eLXUrHCCsgJAJQfoQQa1j9vV"
+    }
+  } ]
+}
