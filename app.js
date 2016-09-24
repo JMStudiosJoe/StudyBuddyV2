@@ -2,6 +2,9 @@ var express = require("express");
 var app = express();
 var twilioMiddleware = require("./middleware/twilioMiddleware.js");
 var cloudantMiddleware = require("./middleware/authenticationMiddleware.js");
+var bodyParser = require("body-parser");
+var reader = app.use(bodyParser.urlencoded({extended:false}));
+
 
 app.use(twilioMiddleware.twilioHandler);
 app.use(cloudantMiddleware.cloudantHandler);

@@ -1,6 +1,8 @@
 var express = require("express");
 
 var router = express.Router();
+console.log("authentication Middleware connecting to user");
+var User = require('../models/userModel.js');
 
 var Cloudant = require("cloudant");
 
@@ -23,6 +25,7 @@ var cloudant = Cloudant({account:username, password:password}, function(err, clo
     }
 });
 
+console.log(User);
 function cloudantMiddleware(req, res, next) {
     console.log("in the cloudant middleware");
     next();
