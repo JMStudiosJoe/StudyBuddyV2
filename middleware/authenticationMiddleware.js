@@ -4,7 +4,7 @@ var router = express.Router();
 
 var Cloudant = require("cloudant");
 
-var VCAP = require('../StudyBuddy_VCAP_Services.json');
+var VCAP = require('../BluemixServices/StudyBuddy_VCAP_Services.json');
 var username = VCAP["cloudantNoSQLDB"][0]["credentials"]["username"]; 
 var password = VCAP["cloudantNoSQLDB"][0]["credentials"]["password"];
 
@@ -28,9 +28,9 @@ function cloudantMiddleware(req, res, next) {
     next();
 };
 
-router.get('/', cloudantMiddleware, function(req, res) {
-    console.log(req);
-    res.send("gotten past the twilio module and now the cloudant module");
+router.get('/', cloudantMiddleware, function(req, res, next) {
+    console.log("gotten past the twilio module and now the cloudant module");
+    next();
 });
 
 module.exports = {
