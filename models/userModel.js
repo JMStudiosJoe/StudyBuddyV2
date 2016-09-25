@@ -1,5 +1,7 @@
 var db = require('../db/cloudantModel.js');
+
 var User = function ( firstName, lastName, country, state, zipcode, phoneNumber, accountSid ) {  
+
     //other possible data
     // "conversationIDHistory": [numbers],
     //
@@ -13,7 +15,7 @@ var User = function ( firstName, lastName, country, state, zipcode, phoneNumber,
         "accountSid": accountSid,
         "clientID": 0,
         "conversationID": 0
-    }
+    };
     this.data = data;
     return this;
 };
@@ -24,6 +26,13 @@ User.prototype.getDetails = function () {
     console.log(this.data);
     console.log(User.data);
     return this.data;
+};
+
+User.prototype.getAll = function () {
+    console.log(db);
+    db.list(function(err, allDbs) {
+            console.log('All my databases: %s', allDbs.join(', '))
+    });
 };
 
 User.prototype.findById = function (id, callback) {  

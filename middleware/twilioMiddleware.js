@@ -14,12 +14,12 @@ function twilioMiddleware(req, res, next) {
     var latestUser = new User("ji joe", "joe joe", req.body.FromCountry, req.body.FromState, req.body.FromZip, req.body.From, req.body.AccountSid)
     console.log(latestUser.getDetails());
     req.locals = latestUser;
-    res.send('<Response><Message>I am sorry, there was an error, please try again./</Message></Response>');
+    next();
 };
 
 router.post('/sendMessageBodyToWatson', twilioMiddleware, function(req, res) {
     console.log("------------LOCALS OBJECT---------------->>>>>> all in the details");
-    console.log(req.locals.getDetails());
+    console.log(req.locals.getAll());
     res.send('<Response><Message>I am sorry, there was an error, please try again./</Message></Response>');
 });
 

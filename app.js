@@ -5,7 +5,7 @@ var cloudantMiddleware = require("./middleware/authenticationMiddleware.js");
 var bodyParser = require("body-parser");
 var reader = app.use(bodyParser.urlencoded({extended:false}));
 
-
+// FOR CLOUD FOUNDRY API ENDPOINT IS https://api.ng.bluemix.net
 app.use(twilioMiddleware.twilioHandler);
 app.use(cloudantMiddleware.cloudantHandler);
 app.get('/', function(req, res){
