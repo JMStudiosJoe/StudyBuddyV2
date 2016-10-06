@@ -95,5 +95,24 @@
       "username" : "SK845d119ce7cd5a3724372ae2228c5fe1",
       "password" : "AILL5Rx5eLXUrHCCsgJAJQfoQQa1j9vV"
     }
-  } ]
+  } ],
+  "conversation": [
+    {
+      "credentials": {
+        "url": "https://gateway.watsonplatform.net/conversation/api",
+        "password": "ChhvFrFpilaL",
+        "username": "4ab647e5-1f97-4f1b-84dc-2c5a2cf5a9a5"
+      },
+      "syslog_drain_url": null,
+      "label": "conversation",
+      "provider": null,
+      "plan": "free",
+      "name": "Conversation-l2",
+      "tags": [
+        "watson",
+        "ibm_created",
+        "ibm_dedicated_public"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,329 @@
+<!--DOCTYPE HTML-->
+<html>
+
+<head>
+	<title>StudyBuddy</title> 
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="http://i.imgur.com/nEawUPD.png">
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Member picture effects -->
+	<style>
+	.test img {cursor: pointer;border: 10px solid transparent;}
+	.test img:hover {border: 10px solid #f1f1f1;}
+	.w3-topnav a:first-child:hover{color: #009688;border-bottom: 3px solid transparent;}
+	/*navigation bar for media below 601px is static */
+	
+	@media only screen and (max-width: 601px) {.w3-topnav {position:static;}}
+	</style>
+
+	
+</head>
+
+<body>
+	<!--Navigation bar-->
+  
+	<div  class ="w3-topnav w3-center w3-theme w3-card-4 w3-top w3-black">
+		<a href="#top"><i class="fa fa-home"></i></a>
+		<a href="#members">Team</a>
+		<a href="#us">About Us</a>
+		<a href="#contact">Contact Us</a>
+
+
+	</div>
+
+ 
+	<div id="top" class="w3-image w3-animate-opacity">
+		<img src="http://i.imgur.com/ACsUdWk.jpg" alt = "SJSU" style="width:100%;min-height:550px;max-height:700px;">
+		
+		<div class="w3-title w3-margin-64">
+			<button onclick="document.getElementById('blog').style.display='block'" class="w3-animate-opacity w3-btn w3-xlarge w3-theme" title ="BlogModal">StudyBuddy</button>
+		</div>
+	
+	</div>
+
+
+<!--blog modal-->
+	
+	<div id="blog" class="w3-modal" style"display: none;">
+		<div class="w3-modal-content w3-card-8 w3-animate-top">
+			<header class="w3-container w3-yellow">
+				<span onclick="document.getElementById('blog').style.display='none'" class="w3-closebtn">
+					x
+				</span>
+				<h4>Join us at our blog to see updates on our project status!</h4>
+			</header>
+			<div class="w3-container">
+				<br>
+			  	<br>
+			</div>
+			<footer class="w3-container w3-yellow"></footer>
+		</div>
+	</div>
+
+
+<!--linkedin modal-->
+<div id="linked" class="w3-modal" style"display: none;">
+	<div class="w3-modal-content w3-card-8 w3-animate-zoom">
+		<header class="w3-container w3-teal">
+			<span onclick="document.getElementById('linked').style.display='none'" class="w3-closebtn">
+				x    
+			</span>
+			<h4>Member Name</h4>
+		</header>
+		<div class="w3-container">
+			<p>Member bio</p>
+		</div>
+		<footer class="w3-container w3-teal">
+			<p>linkedin link</p>
+		</footer>
+	</div>
+</div>
+
+<!--Matt modal-->
+<div id="mattModal" class="w3-modal" style"display: none;">
+	<div class="w3-modal-content w3-card-8 w3-animate-zoom">
+		<header class="w3-container w3-teal">
+			<span onclick="document.getElementById('mattModal').style.display='none'" class="w3-closebtn">
+				x
+			</span>
+			<h4>Matthew Siamu</h4>
+		</header>
+		<div class="w3-container">
+			<p>Matthew is a graduating senior in the Software Engineering program at San Jose State University.  He is a developer that is proficient in Java, Javascript, CSS and HTML.</p>
+		</div>
+		<footer class="w3-container w3-teal">
+			<p>Connect with Matthew on his Linked in profile &nbsp;&nbsp; <a href="https://www.linkedin.com/in/matthew-siamu-9b6365117?trk=hp-identity-name"><i class="fa fa-linkedin-square w3-large"></i></a></p>
+		</footer>
+	</div>
+</div>
+
+<!--Joey modal-->
+<div id="joeyModal" class="w3-modal" style"display: none;">
+	<div class="w3-modal-content w3-card-8 w3-animate-zoom">
+		<header class="w3-container w3-teal">
+			<span onclick="document.getElementById('joeyModal').style.display='none'" class="w3-closebtn">
+				x
+			</span>
+			<h4>Joseph Richardson</h4>
+		</header>
+		<div class="w3-container">
+			<p>Joseph is a graduating senior in the Software Engineering program at San Jose State University.  He is an application developer specializing in Swift for native iOS Apps and dynamic javascript frameworks for webapps.</p>
+		</div>
+		<footer class="w3-container w3-teal">
+			<p>Connect with Joseph on his Linkedin profile &nbsp;&nbsp;<a href="https://www.linkedin.com/in/joseph-richardson-97206953"><i class="fa fa-linkedin-square w3-large"></i></a></p>
+		</footer>
+	</div>
+</div>
+
+<!--Ross Modal-->
+<div id="rossModal" class="w3-modal" style"display: none;">
+	<div class="w3-modal-content w3-card-8 w3-animate-zoom">
+		<header class="w3-container w3-teal">
+			<span onclick="document.getElementById('rossModal').style.display='none'" class="w3-closebtn">
+				x
+			</span>
+			<h4>Ross Wilkinson</h4>
+		</header>
+		<div class="w3-container">
+			<p>Ross is a senior at San Jose State University in the Software Engineering program.  When not training Watson, Ross enjoys composing piano music.</p>
+		</div>
+		<footer class="w3-container w3-teal">
+			<p>Connect with Ross on his Linkedin profile &nbsp;&nbsp; <a href="https://www.linkedin.com/in/ross-wilkinson-8a9287117?trk=hp-identity-name"><i class="fa fa-linkedin-square w3-large"></i></a> </p>
+		</footer>
+	</div>
+</div>
+
+<!--Sassan modal-->
+<div id="sassanModal" class="w3-modal" style"display: none;">
+	<div class="w3-modal-content w3-card-8 w3-animate-zoom">
+		<header class="w3-container w3-teal">
+			<span onclick="document.getElementById('sassanModal').style.display='none'" class="w3-closebtn">
+				x
+			</span>
+			<h4>Sassan Bahramirad</h4>
+		</header>
+		<div class="w3-container">
+			<p>Sassan is a graduating senior in the Software Engineering program at San Jose State.  He has some experience in marketing and has been involved in multiple software engineering projects.</p>
+		</div>
+		<footer class="w3-container w3-teal">
+			<p>Connect with Sassan on his Linkedin profile &nbsp;&nbsp; <a href="https://www.linkedin.com/in/sassanbahramirad"><i class="fa fa-linkedin-square w3-large"></i></a> </p>
+		</footer>
+	</div>
+</div>
+
+<!--Members-->
+<div id="members" class="w3-container w3-padding-64 w3-center">
+	
+	
+	<h2>Team StudyBuddy</h2>
+	<p>Meet the team</p>
+	<div class="w3-row test">
+		<br>
+
+		<!-- Matthew -->
+		<div class="w3-quarter">
+			<img src="http://i.imgur.com/bFO950t.jpg" alt="Product Owner" style="width:50%" class="w3-circle" onClick="document.getElementById('mattModal').style.display='block'">
+			<h3>Matthew Siamu</h3>
+			<p>Product Owner</p>
+		</div>
+
+        <!-- Joey -->
+		<div class="w3-quarter">
+			<img src="https://i.imgur.com/sayURnx.jpg" alt="Scrum Master" style="width:50%" class="w3-circle" onClick="document.getElementById('joeyModal').style.display='block'">
+			<h3>Joseph Richardson</h3>
+			<p>Scrum Master</p>
+		</div>
+
+		<!-- Ross -->
+		<div class="w3-quarter">
+			<img src="http://i.imgur.com/mK1rplp.jpg" alt="Developer" style="width:50%" class="w3-circle" onClick="document.getElementById('rossModal').style.display='block'">
+			<h3>Ross Wilkinson</h3>
+			<p>Developer</p>
+		</div>
+
+		<!-- Sassan -->
+		<div class="w3-quarter">
+			<img src="http://i.imgur.com/Sfax6Ii.jpg" alt="Developer" style="width:50%" class="w3-circle" onClick="document.getElementById('sassanModal').style.display='block'">
+			<h3>Sassan Bahramirad</h3>
+			<p>Developer</p>
+		</div>
+	</div>
+</div>
+
+<!--About us-->
+<div id="us" class="w3-row-padding w3-padding-64 w3-theme-l1">
+
+	<div class="w3-quarter">
+		<h2>About StudyBuddy</h2>
+		<p>StudyBuddy is an educational tool focused on empowering students with the ability to quickly and efficiently answer computer science related questions.  Powered by IBM's supercomputer Watson, StudyBuddy is the most powerful and advanced tool of its kind. StudyBuddy is entirely text based and in making it so we ensure that anyone who has a cellphone, not smartphone, can use our tool. Empower yourself today and use StudyBuddy!</p>
+	
+	</div>
+	<div class="w3-quarter">
+		<div class="w3-card-16 w3-white">
+			<img src="https://i.imgur.com/wi9urRx.jpg" alt="Books" style="width:100%">
+			<div class="w3-container">
+				<h3>Knowledge on the Fly</h3>
+				<p>Information superhighway</p>
+				<p>Flipped classroom learning experience</p>
+				<p>Empowering students</p>
+			</div>
+		</div>
+	</div>
+	<div class="w3-quarter">
+		<div class="w3-card-16 w3-white">
+			<img src="https://i.imgur.com/tXfEUiV.jpg" alt="phone" style="width:100%">
+			<div class="w3-container">
+				<h3>Accessible</h3>
+				<p>Easy to use</p>
+				<p>Mobile innovation for knowledge</p>
+				<p>Cross-platform tool</p>
+			</div>
+		</div>
+	</div>
+	<div class="w3-quarter">
+		<div class="w3-card-16 w3-white">
+			<img src="https://i.imgur.com/95lEmdi.jpg" alt="watson" style="width:100%">
+			<div class="w3-container">
+				<h3>Powered by Watson</h3>
+				<p>IBM's supercomputer</p>
+				<p>Instantaneous response to questions</p>
+				<p>Infintely scalable knowledge base</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Contact us-->
+<div id="contact" class="w3-container w3-padding-64">
+	<h2 class="w3-padding-bottom">Contact Us</h2>
+	<div class="w3-row">
+		<div class="w3-col m5">
+			<h3>Address</h3>
+			<p>Send us feedback of your experience!</p>
+			<p>
+				<i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>
+				&nbsp;&nbsp;San Jose, US
+			</p>
+			<p>
+				<i class="fa fa-phone w3-text-teal w3-xlarge"></i>
+				&nbsp;&nbsp;+1(707) 419 - 3687
+			</p>
+			<p>
+				<i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>
+				&nbsp;&nbsp;studybuddysjsu@gmail.com
+
+			</p>
+		</div>
+
+		<div class="w3-col m7">
+			<form class="w3-container">
+				<div class="w3-group">
+					<input class="w3-input" style="width:100%;" type="text" required>
+					<label class="w3-label w3-validate">Name</label>
+				</div>
+				<div class="w3-group">
+					<input class="w3-input" style="width:100%;" type="text" required>
+					<label class="w3-label w3-validate">Email</label>
+				</div>
+				<div class="w3-group">
+					<textarea class="w3-input" style="width:100%;"></textarea>
+					<label class="w3-label">Subject</label>
+				</div>
+				<button type="button" class="w3-btn w3-right w3-theme">Send</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--Footer-->
+
+<footer class="w3-container w3-paddinz-32 w3-theme w3-center">
+	
+	<h4>Follow Us</h4>
+
+	<a href="javascript:void(0)" title="Facebook">
+		<span class="fa-stack fa-2x">
+		<i class="fa fa-circle fa-stack-2x" style="color:teal;"></i>
+		<i class="fa fa-facebook fa-stack-1x"></i>
+	    </span>
+	</a>
+
+	<a href="javascript:void(0)" title="Twitter">
+		<span class="fa-stack fa-2x">
+	    <i class="fa fa-circle fa-stack-2x" style="color:teal;"></i>
+		<i class="fa fa-twitter fa-stack-1x"></i>
+	    </span>
+	</a>
+
+	<a href="javascript:void(0)" title="Google+">
+		<span class="fa-stack fa-2x">
+		<i class="fa fa-circle fa-stack-2x" style="color:teal;"></i>
+		<i class="fa fa-google-plus fa-stack-1x"></i>
+	    </span>
+	</a>
+
+	<p><i class="fa fa-copyright"></i> Copyright 2016</p>
+
+	<!--back to top button-->
+	<div style="position:relative;bottom:103px;z-index:1;" class="w3-tooltip w3-right">
+		<span class="w3-text w3-padding w3-teal">Back to Top</span>
+		<a class="w3-btn w3-theme" href="#top">
+			<span class="w3-xlarge">
+				<i class="fa fa-chevron-circle-up"></i>
+				
+			</span>
+		</a>
+	</div>
+</footer>
+
+
+
+
+</body>
+</html>
+
+

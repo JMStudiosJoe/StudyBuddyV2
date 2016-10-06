@@ -6,5 +6,6 @@
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false
-    }
+    },
+    "types": "./types"
 }
