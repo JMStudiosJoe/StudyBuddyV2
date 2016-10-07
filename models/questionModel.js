@@ -1,5 +1,7 @@
 var db = require('../db/cloudantModel.js');
-
+var conversation = require('../BluemixServices/WatsonConversation/WatsonConversationModule.js');
+console.log("----------conversation in question module connected--------------");
+console.log(conversation);
 var Question = function ( questionText, phoneNumber, clientID ) {  
 
     var data = {

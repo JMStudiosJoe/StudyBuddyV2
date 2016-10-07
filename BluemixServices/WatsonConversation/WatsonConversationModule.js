@@ -20,7 +20,9 @@ var conversation = watson.conversation( {
 var payload = {
     workspace_id: 'ae0475ab-4564-4657-9aa5-d783ccedc9e0',
     context: {},
-    input: {}
+    input: {
+      "text":"what is an array"
+    }
 };
 conversation.message( payload, function(err, data) {
     if ( err ) {
