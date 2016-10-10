@@ -1,5 +1,6 @@
 var db = require('../db/cloudantModel.js');
-var conversation = require('../BluemixServices/WatsonConversation/WatsonConversationModule.js');
+var Promise = require('bluebird');
+var conversation = Promise.promisifyAll( require('../BluemixServices/WatsonConversation/WatsonConversationModule.js') );
 var convo = new conversation();
 var Question = function ( questionText, phoneNumber, clientID ) {  
 
@@ -27,10 +28,10 @@ Question.prototype.getAll = function () {
     });
 };
 
-Question.prototype.askQuestion = function(question, res) {
+Question.prototype.askQuestion = function(question) {
     console.log(question);
     console.log("---------- QUESTION --------");
-    return convo.askQuestion( question, res );
+    return convo.askQuestion( question );
 }
 
 Question.prototype.findById = function (id, callback) {  
