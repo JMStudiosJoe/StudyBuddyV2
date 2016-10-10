@@ -1,7 +1,6 @@
 var db = require('../db/cloudantModel.js');
 var conversation = require('../BluemixServices/WatsonConversation/WatsonConversationModule.js');
-console.log("----------conversation in question module connected--------------");
-console.log(conversation);
+var convo = new conversation();
 var Question = function ( questionText, phoneNumber, clientID ) {  
 
     var data = {
@@ -24,12 +23,14 @@ Question.prototype.getDetails = function () {
 Question.prototype.getAll = function () {
     console.log(db);
     db.list(function(err, allDbs) {
-            console.log('All my databases: %s', allDbs.join(', '))
+            console.log('All my databases: %s', allDbs.join(', '));
     });
 };
 
-Question.prototype.askQuestion = function(question) {
+Question.prototype.askQuestion = function(question, res) {
     console.log(question);
+    console.log("---------- QUESTION --------");
+    return convo.askQuestion( question, res );
 }
 
 Question.prototype.findById = function (id, callback) {  

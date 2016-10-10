@@ -28,6 +28,11 @@ User.prototype.getDetails = function () {
     return this.data;
 };
 
+User.prototype.findByPhoneNumber = function( phoneNumber ) {
+    console.log("------- FIND USER BY PHONE NUMBER -----------");
+    console.log( phoneNumber );
+};
+
 User.prototype.getAll = function () {
     console.log(db);
     db.list(function(err, allDbs) {

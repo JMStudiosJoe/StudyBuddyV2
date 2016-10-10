@@ -2,7 +2,6 @@
 'use strict';
 
 var VCAP = require("../StudyBuddy_VCAP_Services.json");
-console.log(VCAP);
 var express = require( 'express' );  // app server
 var bodyParser = require( 'body-parser' );  // parser for post requests
 var watson = require( 'watson-developer-cloud' );
@@ -16,18 +15,29 @@ var conversation = watson.conversation( {
   version: 'v1'
 } );
 
-
-var payload = {
-    workspace_id: 'ae0475ab-4564-4657-9aa5-d783ccedc9e0',
-    context: {},
-    input: {
-      "text":"what is an array"
+class Conversation {
+    constructor() {
+	console.log("Conversation constructor");
     }
-};
-conversation.message( payload, function(err, data) {
-    if ( err ) {
-		console.log(err);
-    }
-	console.log(data);
-  } );
-console.log(conversation);
+    
+    askQuestion( questionText, res ){
+	var payload = {
+	  workspace_id: 'ae0475ab-4564-4657-9aa5-d783ccedc9e0',
+	  context: {},
+	  input: {
+	    "text": questionText
+	  }
+	};
+	conversation.message( payload, function(err, data) {
+	    if ( err ) {
+		  console.log(err);
+	    }   
+	    console.log(res);
+	    var answer = data.output.text[0];
+	    console.log(answer);
+	    res.send('<Response><Message>'+answer+'</Response></Message>');	    
+	});
+      }
+}
+exports.Conversation = Conversation;
+module.exports = Conversation;

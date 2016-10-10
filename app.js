@@ -1,8 +1,8 @@
 var express = require("express");
 var app = express();
-var twilioMiddleware = require("./middleware/twilioMiddleware.js");
-var cloudantMiddleware = require("./middleware/authenticationMiddleware.js");
-
+var twilioMiddleware = require( './middleware/twilioMiddleware.js' );
+var cloudantMiddleware = require( './middleware/authenticationMiddleware.js' );
+var questionMiddleware = require( './middleware/questionConversationMiddleware.js' );
 var bodyParser = require("body-parser");
 
 var reader = app.use(bodyParser.urlencoded({extended:false}));
@@ -10,6 +10,7 @@ var reader = app.use(bodyParser.urlencoded({extended:false}));
 // FOR CLOUD FOUNDRY API ENDPOINT IS https://api.ng.bluemix.net
 app.use(twilioMiddleware.twilioHandler);
 app.use(cloudantMiddleware.cloudantHandler);
+app.use(questionMiddleware.questionConversationHandler);
 app.get('/', function(req, res){
         res.sendFile('public/index.html' , { root: __dirname });
 });
