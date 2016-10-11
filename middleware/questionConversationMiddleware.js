@@ -7,13 +7,11 @@ var User = require('../models/userModel.js');
 var Conversation = Promise.promisifyAll(require('../models/questionModel.js'));
 var conversation = new Conversation();
 
-function questionConversationMiddleware(req, res, next) {+
-    console.log("-----------------converstation ---------------");
+function questionConversationMiddleware(req, res, next) {
     var question = req.locals.userQuestion;
+    
     var answer = conversation.askQuestion( question ).then( 
     function successCallback( data ) {
-        console.log("IINNN THE PROMISE");
-        console.log( data );
         res.send('<Response><Message>'+data+'</Message></Response>');
         return Promise.resolve(data);        
     }
@@ -24,7 +22,6 @@ function questionConversationMiddleware(req, res, next) {+
 };
 
 router.post('/sendMessageBodyToWatson', questionConversationMiddleware, function(req, res, next) {
-    console.log("gotten past the twilio module and now the cloudant module");
     next();
 });
 

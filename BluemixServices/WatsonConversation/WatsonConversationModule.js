@@ -24,7 +24,6 @@ class Conversation {
 	
 	return  new Promise( function (resolve, reject ) { 
 	  var payload = {
-
 	  workspace_id: 'ae0475ab-4564-4657-9aa5-d783ccedc9e0',
 	  context: {},
 	  input: {
@@ -37,7 +36,6 @@ class Conversation {
 		  reject(error);
 	    }   
 	    var answer = data.output.text[0];
-	    console.log(answer);
 	    resolve(answer);
 	});
       });

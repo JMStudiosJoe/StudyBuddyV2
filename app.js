@@ -4,7 +4,7 @@ var twilioMiddleware = require( './middleware/twilioMiddleware.js' );
 var cloudantMiddleware = require( './middleware/authenticationMiddleware.js' );
 var questionMiddleware = require( './middleware/questionConversationMiddleware.js' );
 var bodyParser = require("body-parser");
-
+var db = require('./db/cloudantModel.js');
 var reader = app.use(bodyParser.urlencoded({extended:false}));
 
 // FOR CLOUD FOUNDRY API ENDPOINT IS https://api.ng.bluemix.net

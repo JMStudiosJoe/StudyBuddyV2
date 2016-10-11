@@ -1,6 +1,6 @@
 
 var Cloudant = require("cloudant");
-
+//var Cloudant = require('../BluemixServices/CloudantModule.js');
 var VCAP = require('../BluemixServices/StudyBuddy_VCAP_Services.json');
 var username = VCAP["cloudantNoSQLDB"][0]["credentials"]["username"];
 var password = VCAP["cloudantNoSQLDB"][0]["credentials"]["password"];
@@ -15,17 +15,10 @@ var _cloudant = Cloudant({account:username, password:password}, function(err, cl
     }
     else
     {
-        console.log("DB Cloudant Module js Called -------- when do we get called in the process --------------- ");
-        //getDataBases();
-        //setDataIntoQuestions()
-        
-        db = cloudant.db
-		db.list(function(err, allDbs) {
-  			console.log('All my databases: %s', allDbs.join(', '))
-		});
-
-        return db;
+        db = cloudant.db;
+        this.data.db = cloudant.db;
+        return this;
     }
 });
 
-module.exports = db;
+module.exports = _cloudant;
