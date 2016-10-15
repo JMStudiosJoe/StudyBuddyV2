@@ -13,7 +13,6 @@ var User = require("../models/userModel.js");
 function twilioMiddleware(req, res, next) {
     var latestUser = new User("ji joe", "joe joe", req.body.FromCountry, req.body.FromState, req.body.FromZip, req.body.From, req.body.AccountSid)
     var question = req.body.Body;
-    //console.log(latestUser.getDetails());
     req.locals = {
         newUser: {},
         userQuestion: question
@@ -24,9 +23,6 @@ function twilioMiddleware(req, res, next) {
 };
 
 router.post('/sendMessageBodyToWatson', twilioMiddleware, function(req, res, next) {
-    //console.log("------------LOCALS OBJECT---------------->>>>>> all in the details");
-    //console.log(req.locals.newUser);
-    //res.send('<Response><Message>I am sorry, there was an error, please try again./</Message></Response>');
     next();
 });
 
