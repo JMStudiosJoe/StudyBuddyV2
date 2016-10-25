@@ -14,28 +14,31 @@ var Question = function ( questionText, phoneNumber, clientID ) {
     return this;
 };
 
-Question.prototype.getDetails = function () {
-    console.log("Getting question data");
-    
-    return this.data;
-};
-
-Question.prototype.getAll = function () {
-    console.log(db);
-    db.list(function(err, allDbs) {
-            console.log('All my databases: %s', allDbs.join(', '));
+Question.prototype.saveQuestionData = function( isAnswered ) {
+    var self = this;
+    var saveQuestionPromise = new Promise( function( resolve, reject ){
+        var questionDB = db.use( 'questions' );
+        console.log( "saving this question to database" );
+        console.log( self );
+        questionDB.insert(self.data , 4646464, function( err, body, header ) {
+        
+            if( err ) {
+                console.log( "-------    EEERRRROOOOORRRRR    QUESTION DATA SAVED TO DATABASE" );
+                console.log( err );
+                reject( "Error saving question to db" );
+            }
+            else {
+                console.log( "QUESTION DATA SAVED TO DATABASE" );
+                resolve( "question saved to Database" );
+            }
+            
+        });
     });
-};
+    return saveQuestionPromise;
+}
 
 Question.prototype.askQuestion = function(question) {
     return convo.askQuestion( question );
 }
-
-Question.prototype.findById = function (id, callback) {  
-//    db.get('questions', {id: id}).run(function (err, data) {
-//        if (err) return callback(err);
-//        callback(null, new User(data));// first parameter is for error the other is for data so callback function( error, data){ do business logic in here but this is in OTHER FILE}
-//    });
-};
 
 module.exports = Question;
