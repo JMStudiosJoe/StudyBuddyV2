@@ -1,11 +1,11 @@
 var db = require( '../db/cloudantModel.js' );
 var Promise = require( 'bluebird' );
-var phoneNumberSelectorForSearch = { 
+var phoneNumberSelectorForSearch = {
 	selector: {
 		 phoneNumber: ""
 	}
  };
-User = function ( firstName, lastName, country, state, zipcode, phoneNumber, accountSid ) {  
+User = function ( firstName, lastName, country, state, zipcode, phoneNumber, accountSid ) {
 
     //other possible data
     // "conversationIDHistory": [numbers],
@@ -27,18 +27,15 @@ User = function ( firstName, lastName, country, state, zipcode, phoneNumber, acc
 
 
 User.prototype.getDetails = function () {
-    console.log("Getting user data");
     return this.data;
 };
 
 User.prototype.findByPhoneNumber = function( phoneNumber ) {
-    console.log("------- FIND USER BY PHONE NUMBER -----------");
-    console.log( db );
-    var usersdb = db.use( 'users' ); 
-    var phoneNumberSelectorForSearch = { 
-	selector: {
-		phoneNumber: phoneNumber
-	}
+    var usersdb = db.use( 'users' );
+    var phoneNumberSelectorForSearch = {
+			selector: {
+				phoneNumber: phoneNumber
+			}
     };
     var findUserPromise = new Promise( function ( resolve, reject ) {
     usersdb.find(phoneNumberSelectorForSearch, function(er, result) {
@@ -49,37 +46,29 @@ User.prototype.findByPhoneNumber = function( phoneNumber ) {
 		    }
 		    else {
 			    resolve(result);
-		    }	  	
+		    }
 	    });
     });
     return findUserPromise;
 };
 
 User.prototype.create = function ( newUser ) {
-    console.log( "creating a new user" );
+
     var createUserPromise = new Promise ( function ( resolve, reject ) {
-	var usersdb = db.use( 'users' );
-	usersdb.insert( newUser, function ( er, result ) {
-	    if ( er  ) {
-	        reject( er );
+			var usersdb = db.use( 'users' );
+			usersdb.insert( newUser, function ( er, result ) {
+			    if ( er  ) {
+			        reject( er );
+			    }
+			    else {
+				console.log( "user created successfully : " );
+				console.log( result );
+				resolve( result );
 	    }
-	    else {
-		console.log( "user created successfully : " );
-		console.log( result );
-		resolve( result );
-	    }
-	});
-    });
+		});
+  });
 
     return createUserPromise;
-};
-
-
-User.prototype.findById = function (id, callback) {  
-    db.get('users', {id: id}).run(function (err, data) {
-        if (err) return callback(err);
-        callback(null, new User(data));// first parameter is for error the other is for data so callback function( error, data){ do business logic in here but this is in OTHER FILE}
-    });
 };
 
 module.exports = User;

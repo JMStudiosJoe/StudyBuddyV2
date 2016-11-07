@@ -18,26 +18,25 @@ var conversation = Promise.promisifyAll(watson.conversation( {
 
 class Conversation {
     constructor() {
-	console.log("Conversation constructor");
+	     console.log("Conversation constructor");
     }
     askQuestion( questionText ){
-	
-	return  new Promise( function (resolve, reject ) { 
-	  var payload = {
-	  workspace_id: 'ae0475ab-4564-4657-9aa5-d783ccedc9e0',
-	  context: {},
-	  input: {
-	    "text": questionText
-	  }
-	};
-	conversation.message( payload, function(err, data) {
-	    if ( err ) {
-		  console.log(err);
-		  reject(error);
-	    }   
-	    var answer = data.output.text[0];
-	    resolve(answer);
-	});
+    	return  new Promise( function (resolve, reject ) {
+    	  var payload = {
+      	  workspace_id: 'ae0475ab-4564-4657-9aa5-d783ccedc9e0',
+      	  context: {},
+      	  input: {
+      	    "text": questionText
+      	  }
+	      };
+	      conversation.message( payload, function(err, data) {
+      	    if ( err ) {
+      		        console.log(err);
+      		        reject(error);
+      	    }
+      	    var answer = data.output.text[0];
+      	    resolve(answer);
+      	});
       });
     }
 }

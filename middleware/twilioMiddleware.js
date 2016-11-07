@@ -9,25 +9,18 @@ var twilioLookupClient = require('twilio').LookupsClient;
 var lookups = new twilioLookupClient(accountSid, authToken);
 var User = require("../models/userModel.js");
 
-
-function twilioMiddleware(req, res, next) {
-    var latestUser = new User("ji joe", "joe joe", req.body.FromCountry, req.body.FromState, req.body.FromZip, req.body.From, req.body.AccountSid)
-    var question = req.body.Body;
-    req.locals = {
-        newUser: {},
-        userQuestion: question
-    };
-    req.locals.newUser = latestUser;
-    req.locals.userQuestion = question;
-    next();
-};
-
-router.post('/sendMessageBodyToWatson', twilioMiddleware, function(req, res, next) {
-    next();
+router.post('/sendMessageBodyToWatson', function(req, res, next) {
+  var latestUser = new User("ji joe", "joe joe", req.body.FromCountry, req.body.FromState, req.body.FromZip, req.body.From, req.body.AccountSid)
+  var question = req.body.Body;
+  req.locals = {
+      newUser: {},
+      userQuestion: question
+  };
+  req.locals.newUser = latestUser;
+  req.locals.userQuestion = question;
+  next();
 });
 
 module.exports = {
     twilioHandler: router
 }
-
-
