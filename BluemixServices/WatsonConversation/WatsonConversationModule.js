@@ -34,8 +34,10 @@ class Conversation {
       		        console.log(err);
       		        reject(error);
       	    }
+
       	    var answer = data.output.text[0];
-      	    resolve(answer);
+            console.log( answer );
+            resolve(answer);
       	});
       });
     }

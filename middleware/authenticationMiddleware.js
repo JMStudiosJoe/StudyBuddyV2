@@ -11,10 +11,6 @@ var VCAP = require('../BluemixServices/StudyBuddy_VCAP_Services.json');
 var username = VCAP["cloudantNoSQLDB"][0]["credentials"]["username"];
 var password = VCAP["cloudantNoSQLDB"][0]["credentials"]["password"];
 
-router.get('/', function(req, res, next) {
-    next();
-});
-
 router.post('/sendMessageBodyToWatson', function(req, res, next) {
 
   var latestUser = req.locals.newUser;

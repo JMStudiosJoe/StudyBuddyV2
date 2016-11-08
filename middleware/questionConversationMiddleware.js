@@ -11,7 +11,7 @@ var Question = require( '../models/questionModel.js' );
 router.post('/sendMessageBodyToWatson', function(req, res, next) {
   var question = req.locals.userQuestion;
   var questionData = new Question( question,6, 46  );
-  console.log( questionData );
+
   questionData.saveQuestionData( true );
   var answer = conversation.askQuestion( question ).then(
   function successCallback( data ) {

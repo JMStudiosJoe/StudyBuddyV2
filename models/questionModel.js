@@ -22,11 +22,9 @@ Question.prototype.saveQuestionData = function( isAnswered ) {
         questionDB.insert(self.data , 4646464, function( err, body, header ) {
 
             if( err ) {
-
                 reject( "Error saving question to db" );
             }
             else {
-                console.log( "QUESTION DATA SAVED TO DATABASE" );
                 resolve( "question saved to Database" );
             }
         });
